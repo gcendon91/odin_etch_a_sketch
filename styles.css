@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 *{
     margin: 0;
 
@@ -5,8 +9,45 @@
 
 body{
     text-align: center;
+    background-color: lightgreen;
 }
+h1{
+  font-family: 'Gochi Hand', cursive;
+  font-size: 64px;
+  margin-top: 60px;
+  color: rgb(17, 58, 58);
+}
+button{
+  margin-bottom: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  transition-duration: 0.4s;
+  cursor: pointer;
 
+  color: darkslategray;
+}
+#new:hover, #reset:hover {
+  background-color: #031d03; 
+  color: white;
+}
+#container{
+  background-color: white;
+}
+#rainbow:hover{
+  color: white;
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+  animation:slidebg 3s linear infinite;
+}
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
   #container {
     display: flex;
     width: 500px;
@@ -19,6 +60,19 @@ body{
   .cell {
   border: 1px solid gray;
   box-sizing: border-box;
+  cursor: cell;
   }
+  .footer{
+  position:fixed;
+  bottom:5px;
+  left:0;
+  width:100%;
+  font-size: 28px;
 
+  }
+a{
+  text-decoration: none;
+  color: darkslategray;
+  margin-left: 30px;
+}
 

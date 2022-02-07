@@ -5,6 +5,8 @@ const newBtn = document.getElementById("new");
 
 const resetBtn = document.getElementById("reset");
 
+const rainbowBtn = document.getElementById("rainbow");
+
 defaultGrid();
 //Creates a default grid sized 16x16 
 function defaultGrid() {
@@ -37,12 +39,22 @@ function makeColumns(cellNum) {
 
     };
 };
-//Adds color when mouse over
+//Adds default color when mouse over
 function setColor(){
     let cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "red";
+            cell.style.backgroundColor = "black";
+        });
+    });
+};
+//Adds rainbow color when mouse over
+function setRainbowColor(){
+    let cells = document.querySelectorAll(".cell");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseover", () => {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            cell.style.backgroundColor = "#" + randomColor;
         });
     });
 };
@@ -54,11 +66,10 @@ resetBtn.onclick = function(){
           .querySelectorAll(".gridRow")
           .forEach((e) => e.parentNode.removeChild(e)); 
     defaultGrid();
-    setColor();
     let cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "red";
+            setColor();
         });
     });
 
@@ -67,15 +78,26 @@ resetBtn.onclick = function(){
 //new grid button event Listener
 newBtn.onclick = function(){ 
     customGrid();
-    setColor();
     let cells = document.querySelectorAll(".cell");
     cells.forEach((cell) => {
         cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "red";
+            setColor();
         });
     });
 
 };
+
+//rainbow button event Listener
+rainbowBtn.onclick = function(){ 
+    let cells = document.querySelectorAll(".cell");
+    cells.forEach((cell) => {
+        cell.addEventListener("mouseover", () => {
+            setRainbowColor();
+        });
+    });
+
+};
+
 
 //create custom Grid function
 function customGrid() {

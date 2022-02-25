@@ -11,4 +11,4 @@
 
 <p>With Rainbow Mode, the grid is painted with random rgb colors.</p>
 
-<a href="https://gcendon91.github.io/odin_etch_a_sketch/">Live Demo</a>
+### <a href="https://gcendon91.github.io/odin_etch_a_sketch/">Live Demo Here!</a>
